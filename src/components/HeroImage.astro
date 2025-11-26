@@ -1,0 +1,100 @@
+---
+type Props = {
+  size?: number;
+};
+const { size = 500 } = Astro.props;
+---
+
+<div>
+  <div
+    class="relative hero-container ml-auto"
+    style={`width: ${size}px; height: ${size}px`}
+  >
+    <!-- Borde exterior (azul) -->
+    <div
+      class="absolute bg-primary hero-clipping hero-border-outer"
+      style={`width: ${size * 1.1}px; height: ${size * 1.1}px; top: 50%; left: 50%; transform: translate(-50%, -50%);`}
+    >
+    </div>
+    <!-- Borde interior (fondo) -->
+    <div
+      class="absolute bg-background hero-clipping hero-border-inner"
+      style={`width: ${size * 1.05}px; height: ${size * 1.05}px; top: 50%; left: 50%; transform: translate(-50%, -50%);`}
+    >
+    </div>
+    <!-- Imagen -->
+    <img
+      src="/src/assets/images/hero.jpeg"
+      class="absolute object-cover aspect-square hero-clipping hero-image saturate-150"
+      style={`width: ${size}px; height: ${size}px; top: 50%; left: 50%; transform: translate(-50%, -50%);`}
+      width={size}
+      height={size}
+    />
+  </div>
+</div>
+
+<style>
+  @property --r {
+    syntax: "<number>";
+    inherits: false;
+    initial-value: 0;
+  }
+  @property --a {
+    syntax: "<angle>";
+    inherits: false;
+    initial-value: 0deg;
+  }
+
+  .hero-clipping {
+    --r: 0.4; /* controla el redondeo */
+    --a: 30deg; /* controla la rotacion */
+    --_a: (30deg * var(--r));
+    --_r: (50% * cos(30deg) / cos((30deg * (1 - var(--r)))));
+    transition:
+      --r 0.5s,
+      --a 0.5s;
+    clip-path: shape(
+      from calc(50% + var(--_r) * cos(var(--a) - var(--_a)))
+        calc(50% + var(--_r) * sin(var(--a) - var(--_a))),
+      curve to calc(50% + var(--_r) * cos(var(--a) + var(--_a)))
+        calc(50% + var(--_r) * sin(var(--a) + var(--_a))) with
+        calc(50% + 50% * cos(var(--a))) calc(50% + 50% * sin(var(--a))),
+      line to calc(50% + var(--_r) * cos(60deg + var(--a) - var(--_a)))
+        calc(50% + var(--_r) * sin(60deg + var(--a) - var(--_a))),
+      curve to calc(50% + var(--_r) * cos(60deg + var(--a) + var(--_a)))
+        calc(50% + var(--_r) * sin(60deg + var(--a) + var(--_a))) with
+        calc(50% + 50% * cos(60deg + var(--a)))
+        calc(50% + 50% * sin(60deg + var(--a))),
+      line to calc(50% + var(--_r) * cos(120deg + var(--a) - var(--_a)))
+        calc(50% + var(--_r) * sin(120deg + var(--a) - var(--_a))),
+      curve to calc(50% + var(--_r) * cos(120deg + var(--a) + var(--_a)))
+        calc(50% + var(--_r) * sin(120deg + var(--a) + var(--_a))) with
+        calc(50% + 50% * cos(120deg + var(--a)))
+        calc(50% + 50% * sin(120deg + var(--a))),
+      line to calc(50% + var(--_r) * cos(180deg + var(--a) - var(--_a)))
+        calc(50% + var(--_r) * sin(180deg + var(--a) - var(--_a))),
+      curve to calc(50% + var(--_r) * cos(180deg + var(--a) + var(--_a)))
+        calc(50% + var(--_r) * sin(180deg + var(--a) + var(--_a))) with
+        calc(50% + 50% * cos(180deg + var(--a)))
+        calc(50% + 50% * sin(180deg + var(--a))),
+      line to calc(50% + var(--_r) * cos(240deg + var(--a) - var(--_a)))
+        calc(50% + var(--_r) * sin(240deg + var(--a) - var(--_a))),
+      curve to calc(50% + var(--_r) * cos(240deg + var(--a) + var(--_a)))
+        calc(50% + var(--_r) * sin(240deg + var(--a) + var(--_a))) with
+        calc(50% + 50% * cos(240deg + var(--a)))
+        calc(50% + 50% * sin(240deg + var(--a))),
+      line to calc(50% + var(--_r) * cos(300deg + var(--a) - var(--_a)))
+        calc(50% + var(--_r) * sin(300deg + var(--a) - var(--_a))),
+      curve to calc(50% + var(--_r) * cos(300deg + var(--a) + var(--_a)))
+        calc(50% + var(--_r) * sin(300deg + var(--a) + var(--_a))) with
+        calc(50% + 50% * cos(300deg + var(--a)))
+        calc(50% + 50% * sin(300deg + var(--a)))
+    );
+  }
+
+  /* Hover en el contenedor afecta a todos los elementos */
+  .hero-container:hover .hero-clipping {
+    --r: 0.35;
+    --a: 0deg;
+  }
+</style>

@@ -1,0 +1,30 @@
+---
+import NavLink from "./NavLink.astro";
+import { Icon } from "astro-icon/components";
+---
+
+<nav class="h-32 flex items-center justify-between gap-x-4 w-full">
+  <a href="/" class="text-3xl font-medium hover:underline underline-offset-8">
+    IRAI.<span class="text-muted font-bold">DEV</span>
+  </a>
+  <div class="flex items-center gap-x-8">
+    <NavLink transition:name="navlink" href="/">Inicio</NavLink>
+    <NavLink transition:name="navlink" href="/about">Sobre mi</NavLink>
+    <NavLink transition:name="navlink" href="/projects">Proyectos</NavLink>
+    <NavLink transition:name="navlink" href="/contact">Contacto</NavLink>
+    <a
+      href="https://github.com/iraidevPersonal"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <Icon name="github" class="size-6" />
+    </a>
+    <a
+      href="https://www.linkedin.com/in/ignacio-arriagada-iriarte-68ba1425b/"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <Icon name="linkedin" class="size-6" />
+    </a>
+  </div>
+</nav>

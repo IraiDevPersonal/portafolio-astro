@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+@theme {
+  --color-primary: oklch(0.9 0.15 165);
+  --color-secondary: var(--color-stone-700);
+  --color-secondary-foreground: var(--color-stone-100);
+  --color-background: var(--color-stone-950);
+  --color-background-foreground: var(--color-stone-100);
+  --color-muted: var(--color-stone-500);
+  --color-muted-foreground: var(--color-stone-300);
+}

@@ -1,0 +1,28 @@
+---
+import { ClientRouter } from "astro:transitions";
+import Navbar from "../components/Navbar.astro";
+import "../styles/global.css";
+
+type Props = {
+  title: string;
+};
+
+const { title } = Astro.props;
+---
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>IraiDev | {title}</title>
+    <ClientRouter />
+  </head>
+  <body class="bg-background text-background-foreground">
+    <header class="container mx-auto px-4 md:px-0">
+      <Navbar />
+    </header>
+    <slot />
+  </body>
+</html>

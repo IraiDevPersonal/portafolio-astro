@@ -1,0 +1,11 @@
+---
+type Props = {
+  classname?: string;
+};
+
+const { classname } = Astro.props;
+---
+
+<main class="container mx-auto px-4 md:px-0" class:list={classname}>
+  <slot />
+</main>
