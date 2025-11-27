@@ -4,7 +4,9 @@ import { Icon } from "astro-icon/components";
 
 <div class="space-y-5">
   <h1 class="text-3xl font-medium text-muted-foreground">Hola, soy Ignacio,</h1>
-  <h2 class="text-8xl font-bold leading-tight uppercase">
+  <h2
+    class="relative text-8xl font-extrabold leading-tight uppercase bg-linear-to-l from-primary-800 to-primary-500 bg-clip-text text-transparent after:content-[''] after:block after:w-3 after:h-3 after:bg-muted-foreground after:animate-cursor-blink after:absolute after:bottom-5 after:-right-5"
+  >
     Soy Web<br />Developer
   </h2>
   <p class="text-xl text-muted max-w-72">
@@ -13,7 +15,7 @@ import { Icon } from "astro-icon/components";
   </p>
   <a
     href="/about"
-    class="underline underline-offset-8 hover:underline-offset-[14px] transition-all font-bold text-lg group flex items-center gap-2 hover:text-primary w-max"
+    class="underline underline-offset-8 hover:underline-offset-14 transition-all font-bold text-lg group flex items-center gap-2 hover:text-primary w-max"
   >
     Mas Sobre Mi
     <Icon

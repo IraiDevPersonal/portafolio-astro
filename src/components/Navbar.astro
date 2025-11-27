@@ -4,7 +4,11 @@ import { Icon } from "astro-icon/components";
 ---
 
 <nav class="h-32 flex items-center justify-between gap-x-4 w-full">
-  <a href="/" class="text-3xl font-medium hover:underline underline-offset-8">
+  <a
+    href="/"
+    class="text-3xl font-medium hover:underline underline-offset-8 flex items-center-safe"
+  >
+    <Icon name="code" class="size-9 mr-2 animate-pulse text-primary" />
     IRAI.<span class="text-muted font-bold">DEV</span>
   </a>
   <div class="flex items-center gap-x-8">
@@ -16,6 +20,7 @@ import { Icon } from "astro-icon/components";
       href="https://github.com/iraidevPersonal"
       target="_blank"
       rel="noopener noreferrer"
+      class="hover:scale-110 transition-transform"
     >
       <Icon name="github" class="size-6" />
     </a>
@@ -23,8 +28,17 @@ import { Icon } from "astro-icon/components";
       href="https://www.linkedin.com/in/ignacio-arriagada-iriarte-68ba1425b/"
       target="_blank"
       rel="noopener noreferrer"
+      class="hover:scale-110 transition-transform"
     >
       <Icon name="linkedin" class="size-6" />
+    </a>
+    <a
+      href="https://www.getonbrd.com/p/ignacio-arriagada-iriarte"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="hover:scale-110 transition-transform"
+    >
+      <Icon name="get-on-board" class="size-6" />
     </a>
   </div>
 </nav>
