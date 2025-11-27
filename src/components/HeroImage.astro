@@ -6,23 +6,25 @@ const { size = 500 } = Astro.props;
 const blockHeight = size * 0.24;
 ---
 
-<div
-  class="hero-clipping grid place-content-center bg-primary"
-  style={`width: ${size * 1.1}px; height: ${size * 1.1}px;`}
->
+<div class="order-1 lg:order-2 bg-background hero-clipping lg:-mr-9">
   <div
-    class="bg-background grid place-content-center"
-    style={`width: ${size}px; height: ${blockHeight}px;`}
+    class="hero-clipping grid place-content-center bg-primary"
+    style={`width: ${size * 1.1}px; height: ${size * 1.1}px;`}
   >
     <div
-      class="bg-background hero-clipping grid place-content-center"
-      style={`width: ${size * 1.05}px; height: ${size * 1.05}px;`}
+      class="bg-background grid place-content-center w-full"
+      style={`height: ${blockHeight}px;`}
     >
-      <img
-        src="/src/assets/images/hero.jpeg"
-        class="object-cover aspect-square hero-clipping saturate-150"
-        style={`width: ${size}px; height: ${size}px;`}
-      />
+      <div
+        class="bg-background hero-clipping grid place-content-center"
+        style={`width: ${size * 1.05}px; height: ${size * 1.05}px;`}
+      >
+        <img
+          src="/src/assets/images/hero.jpeg"
+          class="object-cover aspect-square hero-clipping saturate-150"
+          style={`width: ${size}px; height: ${size}px;`}
+        />
+      </div>
     </div>
   </div>
 </div>
