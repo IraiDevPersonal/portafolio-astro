@@ -1,4 +1,6 @@
 ---
+import Box from "./Box.astro";
+
 type Props = {
   classname?: string;
 };
@@ -6,6 +8,6 @@ type Props = {
 const { classname } = Astro.props;
 ---
 
-<main class:list={["max-w-7xl mx-auto px-4 w-full", classname]}>
+<Box as="main" class:list={classname}>
   <slot />
-</main>
+</Box>
