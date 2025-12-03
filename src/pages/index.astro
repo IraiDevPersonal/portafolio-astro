@@ -1,13 +1,12 @@
 ---
 import HeroImage from "@/components/HeroImage.astro";
 import HeroPresentation from "@/components/HeroPresentation.astro";
-import Main from "@/components/Main.astro";
 import RootLayout from "@/layouts/RootLayout.astro";
 ---
 
 <RootLayout title="Inicio">
-  <Main
-    classname="flex flex-col items-center justify-center min-h-[calc(100dvh-8rem)] pb-10 lg:pb-0 sm:pr-0 lg:pr-0 pr-0"
+  <main
+    class="base-container flex flex-col items-center justify-center pb-10 lg:pb-0 sm:pr-0 lg:pr-0 pr-0"
   >
     <div
       class="flex flex-col lg:flex-row items-center w-full lg:justify-between gap-y-20"
@@ -15,5 +14,5 @@ import RootLayout from "@/layouts/RootLayout.astro";
       <HeroPresentation />
       <HeroImage />
     </div>
-  </Main>
+  </main>
 </RootLayout>

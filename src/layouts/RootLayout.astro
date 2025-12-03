@@ -2,7 +2,7 @@
 import { ClientRouter } from "astro:transitions";
 import Navbar from "../components/Navbar.astro";
 import "../styles/global.css";
-import Box from "@/components/Box.astro";
+import "../styles/custom.css";
 
 type Props = {
   title: string;
@@ -21,9 +21,9 @@ const { title } = Astro.props;
     <ClientRouter />
   </head>
   <body class="bg-background text-background-foreground">
-    <Box as="header">
+    <header class="base-container">
       <Navbar />
-    </Box>
+    </header>
     <slot />
   </body>
 </html>

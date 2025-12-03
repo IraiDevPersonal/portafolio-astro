@@ -1,13 +1,12 @@
 ---
+import type { Polymorphic } from "astro/types";
 import Box from "./Box.astro";
 
-type Props = {
-  classname?: string;
-};
+type Props = {} & Polymorphic<{ as: "main" }>;
 
-const { classname } = Astro.props;
+const props = Astro.props;
 ---
 
-<Box as="main" class:list={classname}>
+<Box as="main" {...props}>
   <slot />
 </Box>

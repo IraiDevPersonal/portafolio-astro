@@ -1,0 +1,29 @@
+---
+import FormField from "./FormField.astro";
+import Input from "./Input.astro";
+import Textarea from "./Textarea.astro";
+import { Icon } from "astro-icon/components";
+---
+
+<form action="" method="post" class="space-y-4">
+  <FormField id="name" label="Nombre Completo">
+    <Input type="text" id="name" name="name" placeholder="Juan Perez..." />
+  </FormField>
+  <FormField id="email" label="Correo">
+    <Input
+      type="email"
+      id="email"
+      name="email"
+      placeholder="juan.perez321@email.com"
+    />
+  </FormField>
+  <FormField id="message" label="Mensaje">
+    <Textarea id="message" name="message" placeholder="Escribe tu mensaje..." />
+  </FormField>
+  <button
+    type="submit"
+    class="bg-primary flex items-center justify-center gap-2 h-10 px-3 rounded-xl transition-colors hover:bg-primary/90 text-background font-semibold disabled:bg-muted disabled:text-muted-foreground w-full"
+    >Enviar
+    <Icon name="send" />
+  </button>
+</form>

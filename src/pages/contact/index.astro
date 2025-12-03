@@ -1,5 +1,27 @@
 ---
+import ContactForm from "@/components/ContactForm.astro";
 import RootLayout from "@/layouts/RootLayout.astro";
 ---
 
-<RootLayout title="Contacto"> cositas </RootLayout>
+<RootLayout title="Contacto">
+  <main
+    class="max-w-xl mx-auto flex min-h-[calc(100dvh-8rem)] items-centera gap-4 [&>section]:flex-1"
+  >
+    <section class="text-muted-foreground self-start">
+      <h1 class="text-3xl font-bold mb-4">Contacto</h1>
+      <p>
+        Si necesitas contratar mis servicios, puedes contactarme a través del
+        siguiente formulario o para mayor detalle puedes enviarme un correo
+        electrónico a
+        <a
+          class="text-primary underline underline-offset-4"
+          href="mailto:dev.iarriagada@gmail.com">dev.iarriagada@gmail.com</a
+        >.
+      </p>
+      <p class="mb-4">
+        Estare encantado de responder tus consultas lo antes posible.
+      </p>
+      <ContactForm />
+    </section>
+  </main>
+</RootLayout>

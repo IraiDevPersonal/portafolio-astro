@@ -1,0 +1,15 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+type Props = {} & HTMLAttributes<"input">;
+
+const { ...props } = Astro.props;
+---
+
+<input
+  class:list={[
+    "rounded-xl h-10 bg-background-foreground/5 hover:bg-background-foreground/10 px-3 focus:outline-none focus:ring-2 focus:ring-primary placeholder:text-muted hover:placeholder:text-muted-foreground placeholder:font-light transition-all placeholder:transition-colors",
+    props.class,
+  ]}
+  {...props}
+/>
