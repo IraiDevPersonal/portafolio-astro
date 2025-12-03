@@ -1,5 +1,100 @@
 ---
+import Title from "@/components/Title.astro";
 import RootLayout from "@/layouts/RootLayout.astro";
+import { Icon } from "astro-icon/components";
+
+const skills = [
+  {
+    name: "Lenguajes",
+    list: [
+      { name: "JavaScript", icon: "javascript" },
+      { name: "TypeScript", icon: "typescript" },
+    ],
+  },
+  {
+    name: "FrontEnd",
+    list: [
+      { name: "React", icon: "react" },
+      { name: "Next.js", icon: "nextjs" },
+      { name: "Tailwind CSS", icon: "tailwind" },
+      { name: "React Router", icon: "react-router" },
+      { name: "React Hook Form", icon: "react-hook-form" },
+      { name: "Tanstack Query", icon: "tanstack-query" },
+      { name: "Nuqs", icon: "nuqs" },
+      { name: "Zustand", icon: "zustand" },
+      { name: "Shadcn UI", icon: "shadcn" },
+    ],
+  },
+  {
+    name: "BackEnd",
+    list: [
+      { name: "Node.js", icon: "nodejs" },
+      { name: "Express.js", icon: "express" },
+      { name: "Prisma ORM", icon: "prisma" },
+      { name: "PostgreSQL", icon: "postgresql" },
+    ],
+  },
+];
 ---
 
-<RootLayout title="Sobre mi"> cositas </RootLayout>
+<RootLayout title="Sobre mi">
+  <main class="base-container max-w-2xl! mb-10 space-y-8">
+    <header>
+      <Title class={"mb-4 uppercase text-4xl"}>
+        Hola soy, ignacio
+        <br />
+        Arriagada Iriarte
+      </Title>
+      <h3 class="text-xl font-semibold uppercase">
+        Desarrollador web Fullstack.
+      </h3>
+    </header>
+    <section>
+      <p class="text-justify text-muted-foreground text-base">
+        Cuento con tres años de experiencia como desarrollador web FrontEnd, con
+        un enfoque sólido en el área del desarrollo. Me mantengo en constante
+        actualización mediante estudios relacionados con mis intereses
+        profesionales. Además, estoy altamente motivado a asumir nuevas
+        responsabilidades en distintos sectores como educación, salud y otros
+        ámbitos, por lo que no me limito a mi zona de confort.
+        <br />
+        <br />
+        Como desarrollador web, me especializo en crear sistemas y aplicaciones personalizadas,
+        mantenibles y escalables, además de brindar soporte y mejoras a plataformas
+        ya existentes.
+        <br />
+        <br />
+        Poseo conocimientos sólidos para construir soluciones completas, desde el
+        BackEnd, FrontEnd y procesos de despliegue. También estoy capacitado para
+        ofrecer soporte a nivel de hardware, incluyendo mantención, limpieza, reemplazo
+        de componentes y armado de computadores.
+      </p>
+    </section>
+    <section>
+      <h5 class="text-lg font-semibold mb-2">Mis Habilidades</h5>
+      <ul class="space-y-4">
+        {
+          skills.map((skill) => (
+            <li class="mb'4">
+              <h6 class="text-base font-semibold italic text-muted-foreground mb-2">
+                {skill.name}
+              </h6>
+              <ul class="flex flex-wrap gap-2">
+                {skill.list.map((item) => (
+                  <li class="flex items-center gap-2 rounded-full bg-background-foreground/20 overflow-hidden">
+                    <figure class="rounded-full size-6 bg-background-foreground grid place-items-center">
+                      <Icon name={item.icon} class={"text-background"} />
+                    </figure>
+                    <span class="text-sm pe-2 leading-0 text-background-foreground">
+                      {item.name}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </li>
+          ))
+        }
+      </ul>
+    </section>
+  </main>
+</RootLayout>
