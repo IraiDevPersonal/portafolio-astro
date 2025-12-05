@@ -1,0 +1,15 @@
+---
+type Props = {
+  title: string;
+};
+
+const { title } = Astro.props;
+---
+
+<div
+  class="flex items-center gap-4 justify-center after:content-[''] after:w-full after:h-px after:bg-primary-500 before:content-[''] before:w-full before:h-px before:bg-primary-500"
+>
+  <h4 class="text-lg font-medium mb-2 min-w-max capitalize text-primary-500">
+    {title}
+  </h4>
+</div>

@@ -1,12 +1,14 @@
 ---
-import type { HTMLAttributes } from "astro/types";
+import type { Polymorphic } from "astro/types";
 
-type Props = HTMLAttributes<"h2">;
+type HeadingTag = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 
-const { class: classname, ...props } = Astro.props;
+type Props<Tag extends HeadingTag = "h2"> = Polymorphic<{ as: Tag }>;
+
+const { as: Tag = "h2", class: classname, ...props } = Astro.props;
 ---
 
-<h2
+<Tag
   {...props}
   class:list={[
     "relative font-extrabold leading-tight uppercase bg-linear-to-l from-primary-800 to-primary-500 bg-clip-text text-transparent",
@@ -14,4 +16,4 @@ const { class: classname, ...props } = Astro.props;
   ]}
 >
   <slot />
-</h2>
+</Tag>

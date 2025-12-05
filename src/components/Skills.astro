@@ -1,0 +1,71 @@
+---
+import { Icon } from "astro-icon/components";
+import SectionTitle from "./SectionTitle.astro";
+
+const skills = [
+  {
+    name: "Lenguajes",
+    list: [
+      { name: "JavaScript", icon: "javascript" },
+      { name: "TypeScript", icon: "typescript" },
+    ],
+  },
+  {
+    name: "FrontEnd",
+    list: [
+      { name: "React", icon: "react" },
+      { name: "Next.js", icon: "nextjs" },
+      { name: "Tailwind CSS", icon: "tailwind" },
+      { name: "React Router", icon: "react-router" },
+      { name: "React Hook Form", icon: "react-hook-form" },
+      { name: "Tanstack Query", icon: "tanstack-query" },
+      { name: "Nuqs", icon: "nuqs" },
+      { name: "Zustand", icon: "zustand" },
+      { name: "Shadcn UI", icon: "shadcn" },
+    ],
+  },
+  {
+    name: "BackEnd",
+    list: [
+      { name: "Node.js", icon: "nodejs" },
+      { name: "Express.js", icon: "express" },
+      { name: "Prisma ORM", icon: "prisma" },
+      { name: "PostgreSQL", icon: "postgresql" },
+    ],
+  },
+  {
+    name: "Versionado",
+    list: [
+      { name: "Git", icon: "git" },
+      { name: "GitHub", icon: "github-black" },
+    ],
+  },
+];
+---
+
+<section class="space-y-8">
+  <SectionTitle title="Stack tecnológico" />
+  <ul class="space-y-4">
+    {
+      skills.map((skill) => (
+        <li class="mb-4">
+          <h6 class="text-base font- italic text-muted-foreground mb-4">
+            {skill.name}
+          </h6>
+          <ul class="flex flex-wrap gap-2">
+            {skill.list.map((item) => (
+              <li class="flex items-center gap-2 rounded-full bg-background-foreground/20 overflow-hidden">
+                <figure class="rounded-full size-8 bg-background-foreground grid place-items-center">
+                  <Icon name={item.icon} class={"text-background size-5"} />
+                </figure>
+                <span class="text-base pe-2 leading-0 text-background-foreground">
+                  {item.name}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </li>
+      ))
+    }
+  </ul>
+</section>
